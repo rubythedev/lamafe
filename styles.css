@@ -1600,9 +1600,10 @@ a, button, .video-card, .gallery-card, .show-item, .glow-button {
   }
   
   .video-item {
-    width: 280px;
-    height: 520px; /* reduced mobile height */
-    margin: 0 10px;
+    width: min(80vw, 280px);
+    aspect-ratio: 9 / 16;
+    height: auto; /* prevent overflow on narrow screens */
+    margin: 0 8px;
   }
   
   .video-overlay {
@@ -1631,8 +1632,9 @@ a, button, .video-card, .gallery-card, .show-item, .glow-button {
   
   /* Gallery mobile responsive */
   .gallery-card {
-    width: 450px; /* Bigger for mobile too */
-    height: 338px; /* Bigger for mobile too */
+    width: min(92vw, 360px);
+    height: auto; /* keep intrinsic aspect ratio */
+    aspect-ratio: 9 / 16;
   }
 }
 
@@ -1647,8 +1649,8 @@ a, button, .video-card, .gallery-card, .show-item, .glow-button {
   
   /* Gallery extra small screens */
   .gallery-card {
-    width: 350px; /* Bigger for small screens too */
-    height: 263px; /* Bigger for small screens too */
+    width: min(94vw, 340px);
+    height: auto; /* avoid forcing layout wider than viewport */
   }
   
   .hero-title {
